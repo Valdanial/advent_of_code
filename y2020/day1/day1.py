@@ -1,6 +1,8 @@
 from typing import List
 import math
 
+from y2020.lib.get_first_by_sum import get_first_by_sum
+
 INPUT_STR = """1652
 1998
 1677
@@ -204,26 +206,6 @@ INPUT_STR = """1652
 
 INPUT_LIST = [int(number) for number in INPUT_STR.split("\n")]
 TARGET_SUM = 2020
-
-def get_first_by_sum(number_list: List[int], target_sum: int, numbers_required: int):
-    if numbers_required <= 0:
-        if target_sum == 0:
-            return []
-        return None
-    if target_sum <= 0:
-        return None
-    already_checked = []
-    for number in number_list:
-        to_check = []
-        already_checked.append(number)
-        for number_to_check in number_list:
-            if number_to_check not in already_checked:
-                to_check.append(number_to_check)
-        check_result = get_first_by_sum(to_check, target_sum - number, numbers_required - 1)
-        if check_result is not None:
-            check_result.append(number)
-            return check_result
-    return None
 
 # Part 1
 product_part1 = 1
