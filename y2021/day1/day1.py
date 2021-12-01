@@ -1,5 +1,3 @@
-import re
-
 from y2021.lib.multiline_input import get_multiline_integers
 
 INPUT_FILE = "y2021/input/day1"
