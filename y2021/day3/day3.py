@@ -29,7 +29,7 @@ def filter_list(l, operator):
     return list_to_filter[0] # return first element all the time
 
 def bin_string_to_int(bin_string):
-    return sum([int(c) << (len(bin_string) - 1 - idx) for idx, c in enumerate(bin_string)])
+    return int(bin_string, 2)
 
 def get_life_support_rating(status_report):
     ox_gen_rating = bin_string_to_int(filter_list(status_report, lambda a, b: a >= b))
