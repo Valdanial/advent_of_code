@@ -65,7 +65,6 @@ def get_low_points(grid):
     return low_points
 
 def get_higher_connected_points(grid, vector):
-    # Could do with some optimization: may check points that were already checked.
     connected_points = [vector]
     vectors_to_consider = [vector]
     while vectors_to_consider:
