@@ -34,7 +34,6 @@ def generate_code_output(dots_list, fold_instructions):
     code_output_list = [list('.' * max_x) for i in range(max_y + 1)]
     for x, y in dots_list:
         code_output_list[y][x] = '#'
-    print(code_output_list)
     code_output = '\n'.join([reduce(lambda a, b: a + b, el) for el in code_output_list])
     return code_output
 
