@@ -1,21 +1,11 @@
 require "matrix"
+require "./lib/grid_utils.rb"
+
 XMAS = "XMAS"
 
 DIAGONAL_VECTORS = [Vector[-1, -1], Vector[-1, 1], Vector[1, -1], Vector[1, 1]]
 ORTHOGONAL_VECTORS = [Vector[-1, 0], Vector[1, 0], Vector[0, -1], Vector[0, 1]]
 NEIGHBOUR_VECTORS = DIAGONAL_VECTORS + ORTHOGONAL_VECTORS
-
-def in_bounds?(grid, vector)
-    result = (vector[0] >= 0) && (vector[1] >= 0) && (vector[0] < grid.length) && (vector[1] < grid[vector[0]].length)
-    return result
-end
-
-def get_grid_element(grid, vector)
-    if in_bounds?(grid, vector) then
-        return grid[vector[0]][vector[1]]
-    end
-    return nil
-end
 
 def find_words_from(grid, word, neighbour_vectors, position)
     count = 0
