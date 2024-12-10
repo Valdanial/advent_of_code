@@ -53,29 +53,15 @@ def find_x_mas(grid, neighbour_vectors)
     return count
 end
 
-def get_word_grid(input)
-    grid = []
-    i = 0
-    while i < input.length do
-        grid[i] = []
-        for char in input[i].split('') do
-            grid[i].push(char)
-        end
-        i += 1
-    end
-    return grid
-end
-
-
 # PART 1
 def part1(input)
-    grid = get_word_grid(input)
+    grid = get_grid_from_input(input)
     count = find_word_occurences(grid, XMAS, NEIGHBOUR_VECTORS)
     return count
 end
 
 # PART 2
 def part2(input)
-    grid = get_word_grid(input)
+    grid = get_grid_from_input(input)
     return find_x_mas(grid, DIAGONAL_VECTORS)
 end

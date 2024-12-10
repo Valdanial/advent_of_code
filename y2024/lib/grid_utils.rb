@@ -15,3 +15,10 @@ def print_grid(grid)
         puts line.join("")
     end
 end
+
+def get_grid_from_input(input)
+    return input.map {
+        |line|
+        line.split('')
+    }
+end
