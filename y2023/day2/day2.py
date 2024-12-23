@@ -1,7 +1,5 @@
 from functools import reduce
 
-from y2023.lib.multiline_input import get_multiline_input
-
 DAY = "day2"
 INPUT_FILE = f"y2023/input/{DAY}"
 TEST_INPUT_FILE_1 = f"y2023/input/{DAY}_test_1"
@@ -56,21 +54,19 @@ def get_cube_power_sum(lines):
 
 # Part 1
 PART1_SUPPLY = {"red": 12, "green": 13, "blue": 14}
-def part1(input_file):
-    input = get_multiline_input(input_file)
-    part1_sum = get_valid_games_sum(input, PART1_SUPPLY)
+def part1(input_str):
+    part1_sum = get_valid_games_sum(input_str, PART1_SUPPLY)
     return part1_sum
 
 # Part 2
-def part2(input_file):
-    input = get_multiline_input(input_file)
-    part2_sum = get_cube_power_sum(input)
+def part2(input_str):
+    part2_sum = get_cube_power_sum(input_str)
     return part2_sum
 
 
-assert part1(TEST_INPUT_FILE_1) == 8
-print(f"Part 1: sum = {part1(INPUT_FILE)}")
+# assert part1(TEST_INPUT_FILE_1) == 8
+# print(f"Part 1: sum = {part1(INPUT_FILE)}")
 
-assert part2(TEST_INPUT_FILE_2) == 2286
-print(f"Part 2: sum = {part2(INPUT_FILE)}")
+# assert part2(TEST_INPUT_FILE_2) == 2286
+# print(f"Part 2: sum = {part2(INPUT_FILE)}")
 

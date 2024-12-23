@@ -1,2 +1,4 @@
 .venv
 erl_crash_dump
+*__pycache__/
+*.py[cod]

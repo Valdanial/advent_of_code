@@ -4,7 +4,7 @@ DAY_PREFIX = "day"
 INPUT_PATH = './input/'
 
 def run_day(day, is_test)
-    input = ""
+    input = nil
     day_str = DAY_PREFIX + day.to_s
     if is_test then
         puts "Running with TEST input"
